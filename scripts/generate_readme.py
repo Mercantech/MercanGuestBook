@@ -56,11 +56,12 @@ def first_commit_ts_for_file(path: Path) -> int:
 
 def build_index(entries: list[Entry]) -> str:
     lines: list[str] = []
-    lines.append("| # | Handle | Quote | Links |")
+    lines.append("| # | Elev | Citat | Links |")
     lines.append("|---:|---|---|---|")
     for i, e in enumerate(entries, start=1):
-        links = f"[GitHub]({e.github_url}) · [Website]({e.website_url}) · [Fil]({e.path.as_posix()})"
-        lines.append(f"| {i} | `{e.handle}` | {e.quote} | {links} |")
+        elev = f"[`{e.handle}`]({e.github_url})"
+        links = f"[Website]({e.website_url}) · [Fil]({e.path.as_posix()})"
+        lines.append(f"| {i} | {elev} | _{e.quote}_ | {links} |")
     lines.append("")
     return "\n".join(lines)
 
@@ -112,8 +113,9 @@ def main() -> int:
 
     base_text = base_path.read_text(encoding="utf-8", errors="replace")
     index_md = build_index(entries)
-    title = '# <img src="Guestbook.png" alt="MercanGuestBook" width="40" style="vertical-align: middle;" /> MercanGuestBook'
-    generated = title + "\n\n" + inject_index(base_text, index_md).lstrip()
+    title = '# <img src="Guestbook.png" alt="MercanGuestBook" width="300" style="vertical-align: middle;" /> MercanGuestBook'
+    subtitle = "_PR-baseret gæstebog (lav en PR og få 3 approvals)_"
+    generated = title + "\n\n" + subtitle + "\n\n" + inject_index(base_text, index_md).lstrip()
 
     if args.check:
         current = out_path.read_text(encoding="utf-8", errors="replace") if out_path.exists() else ""
