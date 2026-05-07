@@ -1,4 +1,4 @@
-![MercanGuestBook logo](Guestbook.png)
+<img src="Guestbook.png" alt="MercanGuestBook" width="120" />
 
 ## Gæstebog
 <!-- GUESTBOOK_INDEX_START -->
