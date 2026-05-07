@@ -1,6 +1,16 @@
-# <img src="Guestbook.png" alt="MercanGuestBook" width="300" style="vertical-align: middle;" /> MercanGuestBook
+<div align="center">
+  <img src="Guestbook.png" alt="MercanGuestBook" width="300" />
+  <h1>MercanGuestBook</h1>
+  <p><em>PR-baseret gæstebog (lav en PR og få 3 approvals)</em></p>
+  <p>
+    <img alt="PR-based" src="https://img.shields.io/badge/PR-based-black?style=flat" />
+    <img alt="Approvals" src="https://img.shields.io/badge/approvals-3-blue?style=flat" />
+    <img alt="Guestbook" src="https://img.shields.io/badge/guestbook-entries-brightgreen?style=flat" />
+  </p>
+</div>
+**Signaturer:** 1 · **Sortering:** ældste commit øverst
 
-_PR-baseret gæstebog (lav en PR og få 3 approvals)_
+---
 
 ## Gæstebog
 <!-- GUESTBOOK_INDEX_START -->

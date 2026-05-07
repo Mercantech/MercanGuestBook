@@ -113,9 +113,24 @@ def main() -> int:
 
     base_text = base_path.read_text(encoding="utf-8", errors="replace")
     index_md = build_index(entries)
-    title = '# <img src="Guestbook.png" alt="MercanGuestBook" width="300" style="vertical-align: middle;" /> MercanGuestBook'
-    subtitle = "_PR-baseret gæstebog (lav en PR og få 3 approvals)_"
-    generated = title + "\n\n" + subtitle + "\n\n" + inject_index(base_text, index_md).lstrip()
+    header = "\n".join(
+        [
+            '<div align="center">',
+            '  <img src="Guestbook.png" alt="MercanGuestBook" width="300" />',
+            "  <h1>MercanGuestBook</h1>",
+            '  <p><em>PR-baseret gæstebog (lav en PR og få 3 approvals)</em></p>',
+            "  <p>",
+            '    <img alt="PR-based" src="https://img.shields.io/badge/PR-based-black?style=flat" />',
+            '    <img alt="Approvals" src="https://img.shields.io/badge/approvals-3-blue?style=flat" />',
+            '    <img alt="Guestbook" src="https://img.shields.io/badge/guestbook-entries-brightgreen?style=flat" />',
+            "  </p>",
+            "</div>",
+            "",
+        ]
+    )
+
+    stats = f"**Signaturer:** {len(entries)} · **Sortering:** ældste commit øverst"
+    generated = header + stats + "\n\n---\n\n" + inject_index(base_text, index_md).lstrip()
 
     if args.check:
         current = out_path.read_text(encoding="utf-8", errors="replace") if out_path.exists() else ""
