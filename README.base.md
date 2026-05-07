@@ -26,7 +26,6 @@ Repo’et har en automatisk validering, der afviser PRs som ikke følger reglern
   - `- **Website**: https://<din-hjemmeside>`
   - `- **Quote**: "<dit-citat>"`
 
-## Oversigt (automatisk)
 <!-- GUESTBOOK_INDEX_START -->
 <!-- GUESTBOOK_INDEX_END -->
 
