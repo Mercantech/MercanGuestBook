@@ -1,4 +1,4 @@
-# <img src="Guestbook.png" alt="MercanGuestBook" width="28" style="vertical-align: middle;" /> MercanGuestBook
+# <img src="Guestbook.png" alt="MercanGuestBook" width="40" style="vertical-align: middle;" /> MercanGuestBook
 
 ## Gæstebog
 <!-- GUESTBOOK_INDEX_START -->

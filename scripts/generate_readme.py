@@ -112,7 +112,7 @@ def main() -> int:
 
     base_text = base_path.read_text(encoding="utf-8", errors="replace")
     index_md = build_index(entries)
-    title = '# <img src="Guestbook.png" alt="MercanGuestBook" width="28" style="vertical-align: middle;" /> MercanGuestBook'
+    title = '# <img src="Guestbook.png" alt="MercanGuestBook" width="40" style="vertical-align: middle;" /> MercanGuestBook'
     generated = title + "\n\n" + inject_index(base_text, index_md).lstrip()
 
     if args.check:
