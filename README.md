@@ -1,6 +1,4 @@
-# MercanGuestBook
-
-<img src="Guestbook.png" alt="MercanGuestBook" width="120" />
+# <img src="Guestbook.png" alt="MercanGuestBook" width="28" style="vertical-align: middle;" /> MercanGuestBook
 
 ## Gæstebog
 <!-- GUESTBOOK_INDEX_START -->

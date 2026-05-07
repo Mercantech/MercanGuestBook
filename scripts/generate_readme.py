@@ -112,7 +112,8 @@ def main() -> int:
 
     base_text = base_path.read_text(encoding="utf-8", errors="replace")
     index_md = build_index(entries)
-    generated = "# MercanGuestBook\n\n" + inject_index(base_text, index_md).lstrip()
+    title = '# <img src="Guestbook.png" alt="MercanGuestBook" width="28" style="vertical-align: middle;" /> MercanGuestBook'
+    generated = title + "\n\n" + inject_index(base_text, index_md).lstrip()
 
     if args.check:
         current = out_path.read_text(encoding="utf-8", errors="replace") if out_path.exists() else ""
