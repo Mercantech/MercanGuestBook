@@ -1,5 +1,3 @@
-# MercanGuestBook
-
 ## Hvad går det ud på?
 Hver elev laver en Pull Request (PR), der **tilføjer én personlig signatur** til gæstebogen.
 
@@ -30,13 +28,6 @@ Repo’et har en automatisk validering, der afviser PRs som ikke følger reglern
 
 ## Oversigt (automatisk)
 <!-- GUESTBOOK_INDEX_START -->
-
-## Oversigt (automatisk)
-
-| # | Handle | Quote | Links |
-|---:|---|---|---|
-| 1 | `MAGS-GH` | Ship små forbedringer ofte. | [GitHub](https://github.com/MAGS-GH) · [Website](https://github.com/MAGS-GH) · [Fil](entries/MAGS-GH.md) |
-
 <!-- GUESTBOOK_INDEX_END -->
 
 ## GitHub Branch Protection (lærer/maintainers)
