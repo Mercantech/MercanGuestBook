@@ -1,5 +1,6 @@
 <div align="center">
-  <img src="Guestbook.png" alt="MercanGuestBook" width="300" />
+  <img src="Guestbook.png#gh-dark-mode-only" alt="MercanGuestBook" width="300" />
+  <img src="Guestbook-light.png#gh-light-mode-only" alt="MercanGuestBook" width="300" />
   <h1>MercanGuestBook</h1>
   <p><em>PR-baseret gæstebog (lav en PR og få 3 approvals)</em></p>
   <p>
