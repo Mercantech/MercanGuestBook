@@ -28,14 +28,11 @@ Repo’et har en automatisk validering, der afviser PRs som ikke følger reglern
   - `- **Website**: https://<din-hjemmeside>`
   - `- **Quote**: "<dit-citat>"`
 
-## Oversigt (automatisk)
 <!-- GUESTBOOK_INDEX_START -->
-
-## Oversigt (automatisk)
 
 | # | Handle | Quote | Links |
 |---:|---|---|---|
-| 1 | `MAGS-GH` | Ship små forbedringer ofte. | [GitHub](https://github.com/MAGS-GH) · [Website](https://github.com/MAGS-GH) · [Fil](entries/MAGS-GH.md) |
+| 1 | `MAGS-GH` | Godt nok er bedre end perfekt! | [GitHub](https://github.com/MAGS-GH) · [Website](https://github.com/MAGS-GH) · [Fil](entries/MAGS-GH.md) |
 
 <!-- GUESTBOOK_INDEX_END -->
 

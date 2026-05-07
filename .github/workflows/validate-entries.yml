@@ -4,12 +4,16 @@ on:
   pull_request:
     branches:
       - "**"
+  push:
+    branches:
+      - main
 
 permissions:
   contents: write
 
 jobs:
-  validate:
+  validate_pr:
+    if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -39,4 +43,26 @@ jobs:
       - name: Verify README is up to date
         run: |
           python3 scripts/generate_readme.py --check
+
+  sync_main_readme:
+    # Undgå loop: når botten selv committer README, så spring job over.
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && github.actor != 'github-actions[bot]' && !contains(github.event.head_commit.message, 'chore: auto-generate README') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate README (auto-fix on main)
+        run: |
+          python3 --version
+          python3 scripts/generate_readme.py
+          if ! git diff --quiet -- README.md; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add README.md
+            git commit -m "chore: auto-generate README"
+            git push
+          fi
 

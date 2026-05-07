@@ -56,8 +56,6 @@ def first_commit_ts_for_file(path: Path) -> int:
 
 def build_index(entries: list[Entry]) -> str:
     lines: list[str] = []
-    lines.append("## Oversigt (automatisk)")
-    lines.append("")
     lines.append("| # | Handle | Quote | Links |")
     lines.append("|---:|---|---|---|")
     for i, e in enumerate(entries, start=1):
