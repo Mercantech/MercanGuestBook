@@ -45,8 +45,8 @@ jobs:
           python3 scripts/generate_readme.py --check
 
   sync_main_readme:
-    # Undgå loop: når botten selv committer README, så spring job over.
-    if: ${{ github.actor != 'github-actions[bot]' }}
+    # Only run this on push to main. Don't run, when it's the bot pushing; prevent loop.
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && github.actor != 'github-actions[bot]' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
