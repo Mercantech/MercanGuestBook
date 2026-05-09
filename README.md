@@ -9,7 +9,7 @@
     <img alt="Guestbook" src="https://img.shields.io/badge/guestbook-entries-brightgreen?style=flat" />
   </p>
 </div>
-**Signaturer:** 1 · **Sortering:** ældste commit øverst
+**Signaturer:** 2 · **Sortering:** ældste commit øverst
 
 ---
 
@@ -19,6 +19,7 @@
 | # | Elev | Citat | Links |
 |---:|---|---|---|
 | 1 | [`MAGS-GH`](https://github.com/MAGS-GH) | _Godt nok er bedre end perfekt!_ | [Website](https://github.com/MAGS-GH) · [Fil](entries/MAGS-GH.md) |
+| 2 | [`gha-readme-verify`](https://github.com/Mercantech) | _README skal opdateres af Actions, ikke lokalt._ | [Website](https://github.com/Mercantech/MercanGuestBook) · [Fil](entries/gha-readme-verify.md) |
 
 <!-- GUESTBOOK_INDEX_END -->
 
