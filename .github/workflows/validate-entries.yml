@@ -1,4 +1,4 @@
-name: Validate guestbook entry
+name: Validate and generate guestbook entry
 
 on:
   pull_request:
@@ -12,7 +12,8 @@ permissions:
   contents: write
 
 jobs:
-  validate_pr:
+  # Run this on opened PRs
+  validate_and_generate_pr:
     if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
@@ -20,6 +21,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Validate entries change
         env:
@@ -45,7 +47,8 @@ jobs:
           python3 scripts/generate_readme.py --check
 
   sync_main_readme:
-    # Only run this on push to main. Don't run, when it's the bot pushing; prevent loop.
+    # Run this on push to main.
+    # Don't run, when it's the bot pushing; prevent loop.
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && github.actor != 'github-actions[bot]' }}
     runs-on: ubuntu-latest
     steps:
