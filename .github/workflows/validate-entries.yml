@@ -4,6 +4,11 @@ on:
   pull_request:
     branches:
       - "**"
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
   push:
     branches:
       - main
@@ -22,6 +27,7 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
 
       - name: Validate entries change
         env:
@@ -32,9 +38,15 @@ jobs:
           python3 scripts/validate_entries.py
 
       - name: Generate README (auto-fix in PR)
+        env:
+          HEAD_REPO: ${{ github.event.pull_request.head.repo.full_name }}
         run: |
           python3 scripts/generate_readme.py
           if ! git diff --quiet -- README.md; then
+            if [ "$HEAD_REPO" != "${{ github.repository }}" ]; then
+              echo "::error::README.md er ikke opdateret. Kør \`python3 scripts/generate_readme.py\` lokalt og commit ændringen (auto-push virker ikke på PRs fra forks)."
+              exit 1
+            fi
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git add README.md
