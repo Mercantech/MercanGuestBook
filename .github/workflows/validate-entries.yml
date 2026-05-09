@@ -46,7 +46,7 @@ jobs:
 
   sync_main_readme:
     # Undgå loop: når botten selv committer README, så spring job over.
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && github.actor != 'github-actions[bot]' && !contains(github.event.head_commit.message, 'chore: auto-generate README') }}
+    if: ${{ github.actor != 'github-actions[bot]' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
